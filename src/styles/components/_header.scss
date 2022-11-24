@@ -1,0 +1,97 @@
+.header {
+    @include flex(space-between, center);
+    padding: 1rem 4rem;
+    background-color: $black;
+    position: relative;
+
+    &.fixed {
+        @include flex(space-between, center);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem 4rem;
+        background-color: $bg-color;
+    }
+
+    .main-title {
+        display: flex;
+        align-items: center;
+    }
+
+    .main-title > span {
+        display: block;
+        font-size: 2rem;
+        color: $secondary;
+    }
+
+    .burger-button {
+        display: none;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        z-index: 1000;
+    }
+
+    .burger-button:hover {
+        cursor: pointer;
+    }
+
+    .burger-button span {
+        display: block;
+        width: 35px;
+        height: 6px;
+        background-color: $primary;
+        margin: 7px 0;
+        position: relative;
+        border-radius: 5px;
+    }
+
+    .burger-button span::before,
+    .burger-button span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $primary;
+        top: -10px;
+        border-radius: 5px;
+        transition: all 0.3s;
+    }
+
+    .burger-button span::after {
+        top: 10px;
+    }
+
+    .burger-button[aria-expanded="true"] {
+        transform: rotate(360deg);
+    }
+
+    .burger-button[aria-expanded="true"] span {
+        transform: rotate(45deg);
+    }
+
+    .burger-button[aria-expanded="true"] span::before,
+    .burger-button[aria-expanded="true"] span::after {
+        transform: rotate(90deg);
+        top: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        gap: 1rem;
+        padding: 1rem;
+
+        &.fixed {
+            position: relative;
+        }
+
+        .burger-button {
+            display: block;
+        }
+    }
+}

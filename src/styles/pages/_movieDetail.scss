@@ -1,0 +1,176 @@
+.movie-detail {
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .movie-detail-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background-color: rgba(17, 17, 17, 0.705);
+        padding-top: 2rem;
+    }
+
+    .movie-detail-left {
+        flex: 2;
+        display: flex;
+        justify-content: center;
+    }
+
+    .movie-detail-left > .img-container {
+        width: 280px;
+        height: 400px;
+    }
+
+    .movie-detail-left > .img-container > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .movie-detail-right {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        padding-right: 3rem;
+        position: relative;
+    }
+
+    .movie-detail-title {
+        margin-bottom: 1rem;
+    }
+
+    .movie-detail-title > h3 {
+        font-size: 2.5rem;
+        color: $secondary;
+    }
+
+    .movie-detail-title > div {
+        display: flex;
+        gap: 1rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .movie-detail-genres {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+
+    .movie-detail-genres > label,
+    .movie-detail-overview > label {
+        font-size: 1.4rem;
+        font-weight: 800;
+    }
+
+    .movie-detail-genres > ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .movie-detail-genres > ul > li {
+        color: $white;
+        border-radius: 25px;
+        padding: 5px 12px;
+        background-color: $primary;
+    }
+
+    .movie-detail-overview > p {
+        font-size: 1.2rem;
+        color: $white;
+    }
+
+    .movie-detail-note {
+        @include flex(center, center);
+        position: absolute;
+        top: 3rem;
+        right: 5rem;
+        width: 100px;
+        height: 100px;
+        background-color: $primary;
+        border-right: 1rem solid $white;
+        border-radius: 50%;
+    }
+
+    .movie-detail-note > span {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .movie-detail {
+        height: 100%;
+        .movie-detail-container {
+            flex-direction: column-reverse;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .movie-detail-left {
+            width: 100%;
+        }
+
+        .movie-detail-right {
+            width: 100%;
+            padding-right: 1rem;
+            position: relative;
+        }
+
+        .movie-detail-title > h3 {
+            font-size: 1.6rem;
+        }
+
+        .movie-detail-title > div {
+            font-size: 1rem;
+        }
+
+        .movie-detail-genres {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+        }
+
+        .movie-detail-genres > label,
+        .movie-detail-overview > label {
+            font-size: 1.2rem;
+        }
+
+        .movie-detail-genres > ul {
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 1rem 0;
+        }
+
+        .movie-detail-genres > ul > li {
+            padding: 2px 6px;
+        }
+
+        .movie-detail-overview > p {
+            font-size: 1rem;
+            color: $white;
+        }
+
+        .movie-detail-note {
+            @include flex(center, center);
+            position: absolute;
+            top: 3rem;
+            right: 5rem;
+            width: 60px;
+            height: 60px;
+            background-color: $primary;
+            border-right: 1rem solid $white;
+            border-radius: 50%;
+        }
+
+        .movie-detail-note > span {
+            font-size: 1rem;
+        }
+    }
+}

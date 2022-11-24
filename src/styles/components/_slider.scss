@@ -1,0 +1,49 @@
+.slider {
+    width: 100%;
+    padding: 1rem 0;
+
+    & > .s-header {
+        display: flex;
+        justify-content: center;
+        background-color: $bg-color;
+        padding: 0 1rem;
+        border-radius: 6px;
+    }
+
+    & > .s-header h4 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: $secondary;
+        position: relative;
+    }
+
+    .s-main {
+        padding-top: 1rem;
+    }
+
+    .swiperSlide {
+        width: 15%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .slider {
+        & > .s-header {
+            padding: 0.5rem;
+        }
+
+        & > .s-header h3 {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        & > .s-header h3::after {
+            top: 1.4rem;
+            height: 2px;
+        }
+
+        & > .s-header > button > .icon {
+            font-size: 1rem;
+        }
+    }
+}

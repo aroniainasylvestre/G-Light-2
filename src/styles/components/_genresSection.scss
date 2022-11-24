@@ -1,0 +1,119 @@
+.genres {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 8rem;
+    border-radius: 8px;
+
+    .g-header {
+        background-color: $bg-color;
+        padding: 0 1rem;
+        border-radius: 6px;
+        margin-bottom: 8px;
+    }
+    .g-header > h4 {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: $secondary;
+        position: relative;
+    }
+
+    .genres-list {
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .genres-item {
+        font-size: 1.2rem;
+        color: $white;
+        text-transform: capitalize;
+        position: relative;
+    }
+    .genres-item::after {
+        content: "";
+        position: absolute;
+        top: 1.8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        transition: width 0.8s ease;
+        height: 3px;
+        border-radius: 25px;
+        background-color: $primary;
+    }
+    .genres-item.active,
+    .genres-item:hover {
+        cursor: pointer;
+        color: $primary;
+    }
+
+    .genres-item.active::after,
+    .genres-item:hover::after {
+        width: 100%;
+    }
+
+    .g-subsection {
+        width: 100%;
+    }
+
+    .g-movieCard-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2rem;
+    }
+
+    .g-subsection > .btn-container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .g-subsection > .btn-container > button {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: $white;
+        background-color: transparent;
+        border: none;
+    }
+    .g-subsection > .btn-container > button:hover {
+        color: $primary;
+        cursor: pointer;
+    }
+
+    .g-subsection > .btn-container > button > .icon {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .genres {
+        padding: 1rem;
+        .genres-list {
+            flex-wrap: wrap;
+        }
+        .g-movieCard-container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+@media screen and (max-width: 900px) {
+    .genres {
+        .g-movieCard-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+@media screen and (max-width: 550px) {
+    .genres {
+        .g-movieCard-container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

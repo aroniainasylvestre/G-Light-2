@@ -1,0 +1,83 @@
+.navbar {
+    .list-group {
+        display: flex;
+    }
+
+    .list-group-item {
+        @include flex(center, center);
+        height: 40px;
+        padding: 0 1rem;
+        transition: 0.4s;
+    }
+
+    .list-group-item:hover:not(.list-group-item:nth-child(2)) {
+        cursor: pointer;
+        border-radius: 6px;
+        background-color: $primary;
+    }
+
+    .list-group-item a {
+        color: $black;
+    }
+
+    .list-group-item:hover:not(.list-group-item:nth-child(2)) a {
+        color: $white;
+    }
+
+    .list-group-item a {
+        font-size: 1.2rem;
+        color: $white;
+    }
+
+    .list-group-item:nth-child(2) {
+        position: relative;
+        padding-top: 6px;
+
+        span {
+            text-align: center;
+            color: $white;
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 2px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: $primary;
+        }
+    }
+
+    .list-group-item:nth-child(2) a:hover {
+        color: $primary;
+    }
+
+    .list-group-item a > .icon {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: $secondary;
+        transform: translateX(-100%);
+        transition: all 1s ease-in-out;
+        z-index: 3;
+
+        &.active {
+            transition: all 1s ease-in-out;
+            transform: translateX(0);
+        }
+
+        .list-group {
+            width: 100%;
+            flex-direction: column;
+            padding: 2rem;
+            align-items: flex-start;
+        }
+    }
+}

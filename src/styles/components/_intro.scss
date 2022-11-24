@@ -1,0 +1,81 @@
+.intro {
+    display: flex;
+    padding: 0 2rem;
+
+    .intro-card {
+        width: 33.33%;
+        height: 250px;
+        padding: 1rem;
+        position: relative;
+    }
+
+    .intro-card > span {
+        width: 350px;
+        height: 30px;
+        position: absolute;
+        bottom: 20px;
+        left: 30px;
+        overflow: hidden;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+
+    .intro-card > span > a {
+        opacity: 0;
+        color: $white;
+    }
+
+    .new-box {
+        font-size: 1rem;
+        position: absolute;
+        top: 30px;
+        right: 35px;
+        width: 50px;
+        height: 20px;
+        text-align: center;
+        border-radius: 4px;
+        background-color: $white;
+        color: $primary;
+    }
+
+    .img-container {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        z-index: 3;
+    }
+
+    .img-container > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        opacity: 0.9;
+        z-index: 2;
+    }
+
+    .intro-card:hover > :not(span),
+    .intro-card:hover > :not(.new-box) {
+        transform: scale(1.05);
+        transition: transform 0.8s ease-in-out;
+        z-index: 1;
+    }
+
+    .intro-card:hover > span > a,
+    .intro-card:hover > span > a:hover {
+        cursor: pointer;
+        transition: opacity 0.6s ease-in;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .intro {
+        flex-direction: column;
+
+        .intro-card {
+            width: 100%;
+        }
+    }
+}

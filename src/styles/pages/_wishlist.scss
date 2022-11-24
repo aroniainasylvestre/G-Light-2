@@ -1,0 +1,44 @@
+.wishlist {
+    width: 100%;
+    min-height: 100vh;
+    background-color: $bg-color;
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: center;
+
+    .movieCard-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .wishlist {
+        padding: 1rem;
+        .movieCard-container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .wishlist {
+        padding: 1rem;
+        .movieCard-container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .wishlist {
+        padding: 1rem;
+
+        .movieCard-container {
+            width: 80%;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 1rem;
+        }
+    }
+}

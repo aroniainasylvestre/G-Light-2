@@ -1,0 +1,58 @@
+.movie-card {
+    height: 300px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: default;
+    transition: all 0.5s ease;
+
+    & .img-container {
+        width: 100%;
+        height: 250px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    & .img-container > img {
+        width: 100%;
+        height: 100%;
+        object-fit: unset;
+        transition: 0.5s;
+    }
+
+    & .img-container > img:hover {
+        transform: scale(1.1);
+    }
+
+    .mc-info {
+        margin-top: 8px;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .mc-info > h3 {
+        font-size: 0.8rem;
+        height: 16px;
+        overflow: hidden;
+    }
+    .mc-info > h3:hover {
+        cursor: pointer;
+        color: $primary;
+    }
+
+    .mc-info p {
+        font-size: 0.8rem;
+    }
+
+    .mc-info > div {
+        @include flex(space-between, center);
+    }
+
+    .mc-info > div > .icon {
+        font-size: 1.5rem;
+    }
+
+    .mc-info > div > .icon:hover {
+        color: $primary;
+        cursor: pointer;
+    }
+}

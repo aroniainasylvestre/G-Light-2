@@ -1,0 +1,44 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$primary: rgb(204, 19, 56);
+$secondary: rgb(85, 82, 241);
+$grey: rgb(230, 228, 228);
+$black: #000;
+$white: #fff;
+$bg-color: rgb(15, 15, 15);
+$roboto: "Roboto", sans-serif;
+$borderbox: 8px;
+$shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+$white-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2),
+    0 12px 20px 0 rgba(255, 255, 255, 0.19);
+
+body {
+    font-family: $roboto;
+    font-size: 1.2rem;
+    color: $white;
+    background-color: $bg-color;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: $white;
+    text-decoration: none;
+}
+
+input,
+input:focus {
+    font-family: $roboto;
+    font-size: 1.2rem;
+    color: $white;
+    padding-left: 1rem;
+    background-color: $bg-color;
+}
